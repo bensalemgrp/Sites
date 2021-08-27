@@ -1,0 +1,74 @@
+
+.formulaire{
+    background:white ;
+    box-shadow:  5px 5px 10px #d4d4d4;
+    border: #ffffff solid 1.5px;
+    border-radius: 32px;
+    width: 500px;
+    height: 480px;
+    margin-left: 500px;
+    text-align: center;
+    align-content: center;
+    background-color: white;
+}
+.mail_login{
+    margin-right: 375px;
+   font-size: larger;
+}
+.mdp_login{
+    margin-right: 320px;
+    font-size: larger;
+}
+input{
+    border: grey solid 1.5px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    padding-left: 30px;
+    font-size: medium;
+    width: 390px;
+    height: 40px;
+}
+.titre{ 
+    line-height: 1px;
+    font-size:xx-large ;
+    margin-top: 80px;
+}
+
+.titre_login,.titre_registre{
+    color: #000;
+    text-decoration: none;
+}
+.mdp_oublié a{
+    text-decoration: none;
+    font-size:large ;
+    color: #166FE5;
+}
+.mdp_oublié {
+    margin-top: 5px;
+}
+button{
+    border: #000 solid 1px;
+    border-radius: 49px;
+    width: 120px;
+    height:40px;
+    color: white;
+    background:#166FE5;
+    font-size: medium;
+    margin-bottom: 20px;
+}
+button a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.sous_formulaire{
+    margin-top: 50px;
+}
+hr{
+    height: 5px;
+    width: 140px;
+    background-color: #166FE5;
+    margin-left: 85px; 
+    margin-top: 20px;
+}

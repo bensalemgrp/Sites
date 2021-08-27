@@ -1,0 +1,95 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    
+}
+.header1{
+    margin-top:0px;
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    background-color: white;    
+    box-shadow: 5px 5px 10px #d4d4d4;
+    }
+.header1 #rech{
+    margin-left: 150px;
+    padding-left: 20px;
+    border: #000000 solid 1px;
+    border-radius: 20px;
+    width: 250px;
+    height: 40px;
+    font-size: 18px;
+}
+.fa-sistrix{
+    position:relative;
+    margin-left: -30px;
+    font-size: 18px;
+}
+.deposer{
+    color: black;
+    background: #166FE5;
+    border-radius: 13px;
+    border: gray solid 1px;
+    width: 180px;
+    height: 30px;
+    margin-left: 300px;
+    padding-top: 10px;
+    padding-left: 20px;
+    font-size: 18px;
+}
+.deposer .far{
+    margin-left: 10px;
+}
+.deposer a{
+    text-decoration: none;
+    color: white;
+}
+.header1-ul li {
+    float: left;
+    list-style: none;
+    margin-top: 10px
+}
+
+.header1-ul ul{
+    float: left;
+}
+.fa-customize{
+    font-size: 25px;
+    margin-left: 90px;
+    color: #021324;
+    margin-top:-10px;
+}
+#connect{
+    font-size: large;
+    margin-top: 10px;
+    margin-left: 60px;
+    color: rgb(2, 19, 36);
+}
+.header1-connect{
+    margin-left: 100px;
+}
+.header1-connect li{
+    line-height: 1px;
+    list-style: none;
+}     
+.header1-connect a{
+    list-style: none;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+.header1-connect li{
+    float: left;
+    list-style: none;   
+    margin-left: 0px;
+}
+.fa-heart,.fa-bell{
+    font-size: 25px;
+    margin-right: 20px;
+    margin-top: -10px;
+    padding-left: 7px;
+    padding-top: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+

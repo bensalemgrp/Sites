@@ -1,0 +1,62 @@
+.formulaire{
+    background:white ;
+    border: gray solid 2px; 
+    border-radius: 32px;
+    width: 500px;
+    height: 480px;
+}
+
+.formulaire{
+    margin-left: 500px;
+    text-align: center;
+    align-content: center;
+    background-color: white;
+}
+.mail{
+    margin-right: 300px;
+    font-size: larger;
+}
+
+input{
+    border: grey solid 1.5px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    padding-left: 30px;
+    font-size: medium;
+    width: 390px;
+    height: 40px;
+    
+}
+.formulaire h3{
+    line-height: 1px;
+    font-size:xx-large ;
+    margin-top: 80px;
+}
+.formulaire p{
+    line-height: 20px;
+    font-size:large ;
+    margin-top: 80px;
+    margin-left: 40px;
+    text-align: justify;
+    width: 400px;
+    color: black;
+}
+button{
+    border: #000 solid 1px;
+    border-radius: 49px;
+    width: 120px;
+    height:40px;
+    color: white;
+    background:#166FE5;
+    font-size: medium;
+    margin-bottom: 20px;
+    margin-left: 300px;
+}
+button a{
+    color: white;
+    text-decoration: none;
+}
+
+.sous_formulaire{
+    margin-top: 50px;
+}

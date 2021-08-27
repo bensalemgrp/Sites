@@ -1,0 +1,87 @@
+.formulaire{
+    background:white ;
+    box-shadow:  5px 5px 10px #d4d4d4;
+    border: #ffffff solid 1.5px;
+    border-radius: 32px;
+    width: 500px;
+    height: 480px;
+    margin-left: 500px;
+    text-align: center;
+    align-content: center;
+    background-color: white;
+}
+.nom_registre{
+    margin-right: 380px;
+    font-size: large;
+}
+.mail_registre{
+    margin-right: 380px;
+   font-size: large;
+}
+.mdp_registre{
+    margin-right: 330px;
+    font-size: large;
+
+}
+.sous_formulaire input{
+    margin-top: -10px;
+    border: grey solid 1.5px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    padding-left: 30px;
+    font-size: medium;
+    width: 390px;
+    height: 35px;
+    
+}
+.span input{
+    width: 15px;
+    height: 20px;
+    margin-top: 10px;
+}
+.agence{
+    margin-right: 80px;
+    font-size: x-large;
+}
+.particulier{
+    font-size: x-large;
+}
+.titre{ 
+    line-height: 1px;
+    font-size:xx-large ;
+    margin-top: 80px;
+}
+
+.titre_login,.titre_registre{
+    color: #000;
+    text-decoration: none;
+}
+button{
+    border: #000 solid 1px;
+    border-radius: 49px;
+    width: 120px;
+    height:42px;
+    color: white;
+    background:#166FE5;
+    font-size: medium;
+    margin-top: 20px;
+}
+button a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+.sous_formulaire{
+    margin-top: 20px;
+}
+.sous_formulaire input{
+    margin-bottom: 10px;
+}
+
+hr{
+    height: 5px;
+    width: 140px;
+    background-color: #166FE5;
+    margin-left: 278px; 
+    margin-top: 20px;
+}
