@@ -1,7 +1,7 @@
 -- ----------------------------------------------------------------------------
 -- MySQL Workbench Migration
--- Migrated Schemata: offresImmo
--- Source Schemata: offresImmo
+-- Migrated Schemata: ColocImmob
+-- Source Schemata: ColocImmob
 -- Created: Sat Sep  4 00:58:18 2021
 -- Workbench Version: 8.0.20
 -- ----------------------------------------------------------------------------
@@ -9,85 +9,85 @@
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------------------------------------------------------
--- Schema offresImmo
+-- Schema ColocImmob
 -- ----------------------------------------------------------------------------
-DROP SCHEMA IF EXISTS `offresImmo` ;
-CREATE SCHEMA IF NOT EXISTS `offresImmo` ;
+DROP SCHEMA IF EXISTS `ColocImmob` ;
+CREATE SCHEMA IF NOT EXISTS `ColocImmob` ;
 
 
 -- ----------------------------------------------------------------------------
--- Table offresImmo.tya_annonce ['Offre', 'Demande' ]
+-- Table ColocImmob.tya_annonce ['Offre', 'Demande' ]
 -- ----------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `offresImmo`.`tya_annonce` (
+CREATE TABLE IF NOT EXISTS `ColocImmob`.`tya_annonce` (
   `tya_id_annonce` SMALLINT NULL,
   `libelle` VARCHAR(255) NULL);
 
 -- ----------------------------------------------------------------------------
--- Table offresImmo.tyb_typeBien ["Appartement", "Maison", "Studio", "Loft/atelier"]
+-- Table ColocImmob.tyb_typeBien ["Appartement", "Maison", "Studio", "Loft/atelier"]
 -- ----------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `offresImmo`.`tyb_typeBien` (
+CREATE TABLE IF NOT EXISTS `ColocImmob`.`tyb_typeBien` (
   `tyb_id_bien` SMALLINT NULL,
   `libelle` VARCHAR(255) NULL);
  
 -- ----------------------------------------------------------------------------
--- Table offresImmo.tyl_typelogement ['Colocation', 'Location', 'Sous-location', 'Chambre chez l\'habitant' ]
+-- Table ColocImmob.tyl_typelogement ['Colocation', 'Location', 'Sous-location', 'Chambre chez l\'habitant' ]
 -- ----------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `offresImmo`.`tyl_typelogement` (
+CREATE TABLE IF NOT EXISTS `ColocImmob`.`tyl_typelogement` (
   `tyl_id_typeLogement` INT NULL,
   `libelle` VARCHAR(255) NULL);
 
 -- ----------------------------------------------------------------------------
--- Table offresImmo.pay_pays
+-- Table ColocImmob.pay_pays
 -- ----------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `offresImmo`.`pay_pays` (
+CREATE TABLE IF NOT EXISTS `ColocImmob`.`pay_pays` (
   `pay_id` INT NULL,
   `libelle` VARCHAR(255) NULL);
 
 -- ----------------------------------------------------------------------------
--- Table offresImmo.dep_departement
+-- Table ColocImmob.dep_departement
 -- ----------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `offresImmo`.`dep_departement` (
+CREATE TABLE IF NOT EXISTS `ColocImmob`.`dep_departement` (
   `dep_id` INT NULL,
   `pay_id` INT NULL,
   `libelle` VARCHAR(255) NULL);
 
 -- ----------------------------------------------------------------------------
--- Table offresImmo.com_commune
+-- Table ColocImmob.com_commune
 -- ----------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `offresImmo`.`com_commune` (
+CREATE TABLE IF NOT EXISTS `ColocImmob`.`com_commune` (
   `com_id` INT NULL,
   `dep_id` INT NULL,
   `libelle` VARCHAR(255) NULL);
 
 -- ----------------------------------------------------------------------------
--- Table offresImmo.com_commune
+-- Table ColocImmob.com_commune
 -- ----------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `offresImmo`.`vill_ville` (
+CREATE TABLE IF NOT EXISTS `ColocImmob`.`vill_ville` (
   `com_id` INT NULL,
   `ville_id` INT NULL,
   `Code_postale` INT NULL,
   `libelle` VARCHAR(255) NULL);
 
 -- ----------------------------------------------------------------------------
--- Table offresImmo.img_images
+-- Table ColocImmob.img_images
 -- ----------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `offresImmo`.`img_images` (
+CREATE TABLE IF NOT EXISTS `ColocImmob`.`img_images` (
   `img_id_images` VARCHAR(64) NULL,
   `ann_ref` VARCHAR(64) NULL,
   `CheminImage` VARCHAR(255) NULL);
  
 -- ----------------------------------------------------------------------------
--- Table offresImmo.utype_userType ['locataire ou colocataire', Agene, Propriétaire ]
+-- Table ColocImmob.utype_userType ['locataire ou colocataire', Agene, Propriétaire ]
 -- ----------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `offresImmo`.`utype_userType` (
+CREATE TABLE IF NOT EXISTS `ColocImmob`.`utype_userType` (
   `id_typeuser` VARCHAR(255) NOT NULL,
   `libelle` VARCHAR(255) NULL,
   PRIMARY KEY (`id_typeuser`));
 
 -- ----------------------------------------------------------------------------
--- Table offresImmo.compteUsers
+-- Table ColocImmob.compteUsers
 -- ----------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `offresImmo`.`prf_profile` (
+CREATE TABLE IF NOT EXISTS `ColocImmob`.`prf_profile` (
   `prf_id` INT NOT NULL,
   `prf_first_name` VARCHAR(50) NOT NULL,
   `prf_last_name` VARCHAR(50) NOT NULL, 
@@ -111,18 +111,18 @@ CREATE TABLE IF NOT EXISTS `offresImmo`.`prf_profile` (
   PRIMARY KEY (`prf_id`)); 
  
 -- ----------------------------------------------------------------------------
--- Table offresImmo.utype_userType ['locataire ou colocataire', Agene, Propriétaire ]
+-- Table ColocImmob.utype_userType ['locataire ou colocataire', Agene, Propriétaire ]
 -- ----------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `offresImmo`.`validated_user` (
+CREATE TABLE IF NOT EXISTS `ColocImmob`.`validated_user` (
   `id_validation` VARCHAR(255) NOT NULL,
   `prf_id` INT NOT NULL,
   `codeValidation` VARCHAR(255) NULL,
   PRIMARY KEY (`id_validation`));
 
 -- ----------------------------------------------------------------------------
--- Table offresImmo.ann_annonce
+-- Table ColocImmob.ann_annonce
 -- ----------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `offresImmo`.`ann_annonce` (
+CREATE TABLE IF NOT EXISTS `ColocImmob`.`ann_annonce` (
   `ann_ref` VARCHAR(64) NULL,
   `ann_titre` VARCHAR(255) NULL,
   `ann_description` LONGTEXT NULL,
