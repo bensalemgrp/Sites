@@ -96,6 +96,7 @@ CREATE TABLE IF NOT EXISTS `offresImmo`.`prf_profile` (
   `prf_phone` VARCHAR(20) NULL,
   `prf_adress` VARCHAR(50) NOT NULL,
   `ville_id` INT NULL, 
+  `prf_isValidated` INT NULL, 
   `prf_date_naissance` DATETIME NULL, 
   `prf_sexe` VARCHAR(1) NULL, 
   --  only Agence
@@ -109,6 +110,15 @@ CREATE TABLE IF NOT EXISTS `offresImmo`.`prf_profile` (
   
   PRIMARY KEY (`prf_id`)); 
  
+-- ----------------------------------------------------------------------------
+-- Table offresImmo.utype_userType ['locataire ou colocataire', Agene, Propriétaire ]
+-- ----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `offresImmo`.`validated_user` (
+  `id_validation` VARCHAR(255) NOT NULL,
+  `prf_id` INT NOT NULL,
+  `codeValidation` VARCHAR(255) NULL,
+  PRIMARY KEY (`id_validation`));
+
 -- ----------------------------------------------------------------------------
 -- Table offresImmo.ann_annonce
 -- ----------------------------------------------------------------------------
