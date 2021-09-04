@@ -15,8 +15,8 @@
     
     <h3 > Code de vérification</h3>
     <p >La sécurité de vos informations personnelles est essentielle. Nous vérifions 
-        donc que vous êtes bien à l'origine de cette demande</p>
-        
+        donc que vous êtes bien à l'origine de cette demande &nbsp; <b>{{session('verifier_email')}}</b></p>
+       
     <div class="sous_formulaire">
         
         <button type="submit"><a href="saisir_code">Recevoir un code de vérification</a></button>

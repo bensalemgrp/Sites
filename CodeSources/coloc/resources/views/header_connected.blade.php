@@ -28,9 +28,9 @@
                     <li><i class="fas fa-heart"></i></li>
                     <li><i class="fas fa-bell"></i></li>
                     <li>
-                        <a href="login">
+                        <a href="profile_particulier">
                             <i class="fas fa-user fa-customize"></i>
-                            <p id="connect">se connecter</p>
+                            <p id="connect2">{{session('nom_connected') }}</p>
                         </a>
                     </li>
                 </ul>

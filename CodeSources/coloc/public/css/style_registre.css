@@ -10,6 +10,11 @@
     align-content: center;
     background-color: white;
 }
+.erreur{
+    color: red;
+    position: absolute;
+    margin-left: 150px;
+}
 .nom_registre{
     margin-right: 380px;
     font-size: large;

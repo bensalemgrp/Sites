@@ -1,6 +1,6 @@
 .profile{
     width: 800px;
-    height: 200px;
+    height: 250px;
     margin-left: 200px;
     border: black solid 1px;
     border-radius: 10px;
@@ -11,7 +11,7 @@
     border: black solid 1px;
     border-radius: 80px;
     margin-left: 50px;
-    margin-top: 25px;
+    margin-top: 50px;
 }
 .cercle .fa-camera{
     margin-left: 60px;
@@ -19,7 +19,7 @@
     font-size: 30px;
     color: rgb(63, 63, 63);
 }
-.formulaire_profile{
+.formulaire_profile_particulier{
     width: 800px;
     height: 500px;
     margin-left: 200px;
@@ -38,13 +38,13 @@
     float: left;
     list-style: none;
     margin-left: 200px;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 .ul1 .li2{
     margin-left: 50px;
 }
 .Désactiver_Supprimer{
-    margin-top: 400px;
+    margin-top: 20px;
     margin-left: 200px;   
 }
 .Désactiver_Supprimer li{
@@ -65,3 +65,70 @@
 .contenu_profile{
     height: 800px;
 }
+
+.enregistre{
+    margin-top: 450px;
+    margin-left: 20px;
+    position: absolute;
+    border-radius: 10px;
+    border:black solid 1px;
+    background-color: #166FE5;
+    color: white;
+    width: 100px;
+    height: 30px;
+}
+.enregistre ,.Désactiver_Supprimer{
+    float: left;
+}
+/******* profile_particulier********/
+
+.particulier li{
+    float: left;
+    list-style: none;
+}
+.donner_particulier li{
+    list-style: none;
+    float: none;
+    line-height: 40px;
+}
+.donner_particulier{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.information_particulier{
+    margin-left: 200px;
+    line-height: 25px;
+    margin-top: -20px;
+}
+/******* profile_agence********/
+.formulaire_profile_agence{
+    width: 800px;
+    height: 600px;
+    margin-left: 200px;
+    margin-top: 30px;
+    border: black solid 1px;
+    border-radius: 10px;
+}
+.agence li{
+    float: left;
+    list-style: none;
+}
+.donner_agence li{
+    list-style: none;
+    float: none;
+    line-height: 40px;
+}
+.donner_agence{
+    margin-top: 10px;
+    margin-left: 50px;
+}
+.information_agence{
+    margin-left: 200px;
+    line-height: 30px;
+    margin-top: -20px;
+}
+.label{
+    line-height: 20px;
+}
+    

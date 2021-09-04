@@ -11,16 +11,18 @@
 @extends('master')
 @section('content')
 <div class="formulaire">
-    
-    <h3 > Mot de passe oublié </h3>
-    <p > Entrez l'adresse e‑mail ou votre numéro associée à votre compte</p>
+    <form action="mdp_oublié" method="POST">
+        @csrf
+        <h3 > Mot de passe oublié </h3>
+        <p > Entrez l'adresse e‑mail ou votre numéro associée à votre compte <br><b style="color: red">{{session('notification')}}</b> </p>
         
-    <div class="sous_formulaire">
-        <label for="" class="mail"> Email / numéro</label><br>
-        <input type=""  placeholder="Email / numéro ..."><br>
-        <button type="submit"><a href="code"> continuer</a></button>
-        
-    </div>
+        <div class="sous_formulaire">
+            <label for="" class="mail"> Email / numéro</label><br>
+            <input type=""  placeholder="Email / numéro ..." name="email"><br>
+            <button type="submit"><a href="code"> continuer</a></button>
+            
+        </div>
+    </form>
 </div>
 @endsection
 </body>

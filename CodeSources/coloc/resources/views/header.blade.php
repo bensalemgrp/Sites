@@ -7,16 +7,16 @@
     <link rel="stylesheet" href="/css/style_header.css">
     <script src="https://kit.fontawesome.com/a8768abbf0.js" crossorigin="anonymous"></script>
     <title>Document</title>
-    
+
 </head>
 <body>
     <div class="header1">
         <ul class="header1-ul">
             <li>
                 <div class="deposer">
-                    <a href="" ><label  >Déposer une annonce</label></a>
+                    <a href="annonce" ><label  >Déposer une annonce</label></a>
                 </div>
-            </li> 
+            </li>
             <li>
                 <input type="" id="rech" placeholder="rechercher..." >
                 <i class="fab fa-sistrix"></i>
@@ -26,13 +26,13 @@
                     <li>
                         <a href="login">
                             <i class="fas fa-user fa-customize"></i>
-                            <p id="connect">se connecter</p>
+                            <p id="connect1">se connecter</p>
                         </a>
                     </li>
                 </ul>
             </li>
         </ul>
     </div>
-    
+
 </body>
 </html>

@@ -12,6 +12,9 @@
     align-content: center;
     background-color: white;
 }
+.erreur{
+    color: red;
+}
 .mail{
     margin-right: 300px;
     font-size: larger;

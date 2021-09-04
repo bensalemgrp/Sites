@@ -11,6 +11,11 @@
     align-content: center;
     background-color: white;
 }
+.erreur{
+    color: red;
+    position: absolute;
+    margin-left: 150px;
+}
 .mail_login{
     margin-right: 375px;
    font-size: larger;

@@ -184,9 +184,7 @@
             <div class="p3"></div>
             <div class="p4"></div>
             <div class="contenu">
-                <div></div>
                 <div class="annonce1"></div>
-                <div class="annonce2"></div>
             </div>
             <div class="p6"></div>
         </div>

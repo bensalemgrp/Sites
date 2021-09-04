@@ -8,48 +8,65 @@
     <title>connecter</title>
 </head>
 <body >
-@extends('master')
-@section('content')    
-<div class="profile">
-    <div class="cercle"><a href=""><i class="fas fa-camera "></i></a></div>
-   
-</div>
-<div class="formulaire_profile">
-    <ul class="ul1">
-        <li class="li1"> 
-            <ul class="sous_formulaire1">
-                <li><label for="" class="Prénom"> Prénom</label></li>
-                <li><label for="" class="nom"> Nom</label></li>
-                <li><label for="" class="nom">Date de naissance</label></li>
-                <li><label for="" class="nom">Sexe</label></li>
-                <li><label for="" class="nom">Activité</label></li>
-                <li><label for="" class="nom">Pays </label></li>
-                <li><label for="" class="nom">E-mail</label></li>
-                <li><label for="" class="nom">Téléphone (facultatif)</label></li>
-            </ul>
-        </li> 
-        <li class="li2">
-            <ul class="sous_formulaire2">
-                <li><input type="text"  placeholder="Prénom"></li>
-                <li><input type="text"  placeholder="Nom"></li>
-                <li><input type="date"  placeholder="Date de naissance"></li>
-                <li><input type="nom"></li>
-                <li><input type="" ></li>
-                <li><input type="nom"  placeholder="Nom"></li>
-                <li><input type="nom"  placeholder="exemple@123.com"></li>
-                <li><input type="nomber"></li>
-            </ul>
-        </li>
-    </ul>
-    <div class="Désactiver_Supprimer">
-        <ul>   
-            <li><input type="checkbox"><label for="">Désactiver</label></li>
-            <li><input type="checkbox"><label for="">Supprimer</label></li>
-        </ul> 
-    </div>
-</div>
+@extends('master_connected')
+@section('content')   
 
-<div class="pub"></div>
+    <div class="profile">
+        <form action="profile_particulier" method="POST">
+        @csrf 
+        <ul class="particulier">
+            <li><div class="cercle"><a href=""><i class="fas fa-camera "></i></a></div></li>
+            <li>
+                <ul class="donner_particulier">
+                    <li><p id="label"> Prénom: </p>            <p class="information_particulier">{{session('prenom')}}</p></li>
+                    <li><p id="label"> Nom:</p>                <p class="information_particulier">{{session('username')}}</p></li>
+                    <li><p id="label"> email:</p>               <p class="information_particulier">{{session('email')}}</p></li>
+                    <li><p id="label"> Téléphone (facultatif):</p> <p class="information_particulier">{{session('telephone')}}</p></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="formulaire_profile_particulier">
+        <ul class="ul1">
+            <li class="li1"> 
+                <ul class="sous_formulaire1">
+                    {{session('notification')}}
+                    <li><label for="" class="nom"> email</label></li>
+                    <li><label for="" class="nom"> Nom</label></li>
+                    <li><label for="" class="Prénom"> Prénom</label></li>
+                    <li><label for="" class="nom">Date de naissance</label></li>
+                    <li><label for="" class="nom">Sexe</label></li>
+                    <li><label for="" class="nom">Activité</label></li>
+                    <li><label for="" class="nom">Pays </label></li>
+                    <li><label for="" class="nom">addresse </label></li>
+                    <li><label for="" class="nom">Téléphone (facultatif)</label></li>
+                </ul>
+            </li> 
+            <li class="li2">
+                <ul class="sous_formulaire2">
+                    <li><input name="email" type="email"  placeholder="email"></li>
+                    <li><input name="nom" type="text"  placeholder="Nom"></li>
+                    <li><input name="prenom" type="text"  placeholder="Prénom"></li>
+                    <li><input name="dateN" type="date"  placeholder="Date de naissance"></li>
+                    <li><input name="Sexe" type="nom"></li>
+                    <li><input name="activiter" type="text" ></li>
+                    <li><input name="pays" type="text" ></li>
+                    <li><input name="addresse" type="text"  placeholder=""></li>
+                    <li><input name="telephone" type="nomber"></li>
+                </ul>
+            </li>
+        </ul>
+        <button type="submit" class="enregistre">Enregistre</button>
+        <div class="Désactiver_Supprimer">
+            <ul>   
+                <li><input type="checkbox" ><label for="">Désactiver</label></li>
+                <li><input type="checkbox"><label for="">Supprimer</label></li>
+            </ul> 
+        </div>
+    </form>
+    </div>
+    
+
 @endsection
 </body>
 </html>

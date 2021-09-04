@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AddUserController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AnnonceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +16,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/annonce','AnnonceController@index');
+Route::get('/annonce', function () {
+    return view('annonce');
+});
+Route::resource('annonce','AnnonceController');
+Route::post('/annonce', 'AnnonceController@store')->name('annonce');
+Route::view('/annonce', 'annonce');
 Route::get('/mdp', function () {
     return view('mdp_oublié');
 });
@@ -25,7 +35,7 @@ Route::get('/saisir_code', function () {
 Route::get('/nouveau_mdp', function () {
     return view('nouveau_mdp');
 });
-Route::get('/mdp', function () {
+Route::get('/mdp_oublié', function () {
     return view('mdp_oublié');
 });
 Route::get('/login', function () {
@@ -43,19 +53,40 @@ Route::get('/footer', function () {
     return view('footer');
 });
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home');
 });
-Route::get('/home_connected', function () {
+Route::get('/connected', function () {
     return view('home_connected');
 });
 Route::get('/master', function () {
     return view('master');
 });
+Route::get('/master_connected', function () {
+    return view('master__connected');
+});
+Route::get('/favoris', function () {
+    return view('favoris');
+});
 
+Route::get('/profile_agence', function () {
+    return view('profile_agence');
+});
 Route::get('/profile_particulier', function () {
     return view('profile_particulier');
 });
 
+Route::view('registre', 'registre');
+Route::post('registre', 'App\Http\Controllers\AddUserController@addUser');
+
 Route::view('login', 'login');
-Route::post('submit', 'App\Http\Controllers\colccontrollers@save');
+Route::post('login', 'App\Http\Controllers\LoginController@login');
+
+Route::view('mdp_oublié', 'mdp_oublié');
+Route::post('mdp_oublié', 'App\Http\Controllers\LoginController@VerifierUser');
+
+Route::view('profile_particulier', 'profile_particulier');
+Route::post('profile_particulier', 'App\Http\Controllers\ProfileController@ProfileParticulier');
+
+Route::view('profile_agence', 'profile_agence');
+Route::post('profile_agence', 'App\Http\Controllers\ProfileController@ProfileAgence');

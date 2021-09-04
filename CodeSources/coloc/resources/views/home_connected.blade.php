@@ -8,7 +8,7 @@
     <title>home</title>
 </head>
 <body>
-@extends('master_connect')
+@extends('master_connected')
 @section('content')
     <div class="body">
         <div>
