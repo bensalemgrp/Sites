@@ -1,5 +1,5 @@
 -- ----------------------------------------------------------------------------
--- MySQL Workbench Migration
+-- MySQL Workbench controller
 -- Migrated Schemata: ColocImmob
 -- Source Schemata: ColocImmob
 -- Created: Sat Sep  4 00:58:18 2021
