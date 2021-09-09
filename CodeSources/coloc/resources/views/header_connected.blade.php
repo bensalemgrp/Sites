@@ -13,6 +13,8 @@
 </head>
 <body>
     <div class="header1">
+        <form action="header_connected" method="POST">
+            @csrf
         <ul class="header1-ul">
             <li>
                 <div class="deposer">
@@ -28,15 +30,31 @@
                     <li><i class="fas fa-heart"></i></li>
                     <li><i class="fas fa-bell"></i></li>
                     <li>
-                        <a href="profile_particulier">
+                        <a >
                             <i class="fas fa-user fa-customize"></i>
-                            <p id="connect2">{{session('nom_connected') }}</p>
+                            <a href="#demo"><p id="connect2">{{session('first_user_name') }} {{session('last_user_name') }} </p></a><br>
+                            
                         </a>
                     </li>
                 </ul>
+                
             </li>
         </ul>
-    </div>
+        
+    </form>
+    <a href="#">
+    <div class="box" id="demo">
+        <hr class="hr_user_left">
+        <hr class="hr_user_right">
+        <div class="hr">
+            <div class="img_utilisateur">
+                <i class="fas fa-user fa-customize" id="fa-user"></i>
+            </div>
+        </div>
+            <div id="profile"><a href="profile_particulier" >Profile</a></div><br>
+            <div id="deconnecter"><a href="/">Déconnecter</a></div>
+        </div>
+    </div></a>
     
 </body>
 </html>

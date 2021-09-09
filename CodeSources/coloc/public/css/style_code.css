@@ -15,6 +15,7 @@
 .mail{
     margin-right: 300px;
     font-size: larger;
+    list-style: none;
 }
 
 input{

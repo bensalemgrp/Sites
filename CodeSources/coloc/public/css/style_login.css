@@ -12,9 +12,19 @@
     background-color: white;
 }
 .erreur{
-    color: red;
+    color: rgb(128, 35, 35);
     position: absolute;
-    margin-left: 150px;
+    margin-left: 50px;
+    margin-top: 20px;
+    background-color: rgba(224, 174, 174, 0.582);
+    width: 400px;
+    font-size: large;
+}
+.invalid-feedback{
+    color: red;
+    margin-top: 50px;
+    position: absolute;
+    margin-left: 40px;
 }
 .mail_login{
     margin-right: 375px;
@@ -24,7 +34,7 @@
     margin-right: 320px;
     font-size: larger;
 }
-input{
+.input{
     border: grey solid 1.5px;
     margin-bottom: 30px;
     border-radius: 5px;

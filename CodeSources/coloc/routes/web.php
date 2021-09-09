@@ -23,6 +23,7 @@ Route::get('/annonce', function () {
 Route::resource('annonce','AnnonceController');
 Route::post('/annonce', 'AnnonceController@store')->name('annonce');
 Route::view('/annonce', 'annonce');
+
 Route::get('/mdp', function () {
     return view('mdp_oublié');
 });
@@ -79,8 +80,11 @@ Route::get('/profile_particulier', function () {
 Route::view('registre', 'registre');
 Route::post('registre', 'App\Http\Controllers\AddUserController@addUser');
 
+
 Route::view('login', 'login');
 Route::post('login', 'App\Http\Controllers\LoginController@login');
+
+
 
 Route::view('mdp_oublié', 'mdp_oublié');
 Route::post('mdp_oublié', 'App\Http\Controllers\LoginController@VerifierUser');
@@ -88,5 +92,10 @@ Route::post('mdp_oublié', 'App\Http\Controllers\LoginController@VerifierUser');
 Route::view('profile_particulier', 'profile_particulier');
 Route::post('profile_particulier', 'App\Http\Controllers\ProfileController@ProfileParticulier');
 
+
+
 Route::view('profile_agence', 'profile_agence');
 Route::post('profile_agence', 'App\Http\Controllers\ProfileController@ProfileAgence');
+
+Route::view('header_connected', 'header_connected');
+Route::post('heafer_connected', 'App\Http\Controllers\ProfileController@Profile');

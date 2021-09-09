@@ -11,33 +11,68 @@
     background-color: white;
 }
 .erreur{
-    color: red;
+    color: rgb(128, 35, 35);
     position: absolute;
-    margin-left: 150px;
+    margin-left: 50px;
+    margin-top: 20px;
+    background-color: rgba(224, 174, 174, 0.582);
+    width: 400px;
+    font-size: large;
+}
+.invalid-feedback_user{
+    color: red;
+    margin-top: 30px;
+    position: absolute;
+    margin-bottom: 10px;
+}
+.invalid-feedback{
+    color: red;
+    margin-top: 30px;
+    position: absolute;
+    margin-left: 50px;
+    margin-bottom: 10px;
 }
 .nom_registre{
-    margin-right: 380px;
+    margin-right: 160px;
+    font-size: large;
+}
+.prenom_registre{
+    margin-right: 140px;
     font-size: large;
 }
 .mail_registre{
-    margin-right: 380px;
+    margin-right: 370px;
    font-size: large;
+   margin-top: 20px;
 }
 .mdp_registre{
-    margin-right: 330px;
+    margin-right: 320px;
     font-size: large;
-
+    margin-top: 20px;
+}
+.user_id {
+    margin-left: 30px;
+}
+.user_id li{
+    float: left;
+    list-style: none;
+    margin-left: 10px;
 }
 .sous_formulaire input{
-    margin-top: -10px;
+    margin-top: -5px;
     border: grey solid 1.5px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     border-radius: 5px;
-    padding-left: 30px;
+    padding-left: 20px;
     font-size: medium;
     width: 390px;
     height: 35px;
-    
+}
+.user_id input{
+    width: 180px;
+}
+.span{
+    margin-left: 50px;
 }
 .span input{
     width: 15px;
@@ -54,7 +89,7 @@
 .titre{ 
     line-height: 1px;
     font-size:xx-large ;
-    margin-top: 80px;
+    margin-top: 60px;
 }
 
 .titre_login,.titre_registre{
@@ -69,7 +104,7 @@ button{
     color: white;
     background:#166FE5;
     font-size: medium;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 button a{
     color: white;
