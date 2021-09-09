@@ -3,41 +3,54 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\prf_profile;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use Laravel\Fortify\Fortify;
 
 class LoginController extends Controller
 {
     //
     function VerifierUser(Request $req){
         
-        $user = User::where(['email'=>$req->email])->first();
-        if(!$user || Hash::check($req->password,$user->password))
+        $user = prf_profile::where(['prf_email'=>$req->email])->first();
+        if(!$user || Hash::check($req->password,$user->prf_password))
         {  
              $req->session()->flash('notification', 'you do not have an account with this email !');
             return redirect('/mdp_oublié');
         }
         else{
             $req->session()->put('user',$user);
-            $req->session()->put('verifier_email' , $user['email']);
+            $req->session()->put('verifier_email' , $user['prf_email']);
             return redirect('/code');
         }
+
     }
     function login(Request $req){
         
-        $user = User::where(['email'=>$req->email])->first();
-        if(!$user || Hash::check($req->password,$user->password))
-        {   
+        request()->validate([
+            'email'=>'required',
+            'password'=>'required'
+        ]);
+        $user = prf_profile::where(['prf_email'=>$req->email])->first();
+        if(!$user || Hash::check($req->password,$user->prf_password))
+        {    
             
             $req->session()->flash('notification', 'Your email and password is does exist!');
             return redirect('/login');
         }
         else{
+           
             $req->session()->put('user',$user);
-            $req->session()->put('nom_connected' , $user['username']);
-
+            $req->session()->put('first_user_name' , $user['prf_first_name']);
+            $req->session()->put('last_user_name' , $user['prf_last_name']);
+            $req->session()->put('first_name' , $user['prf_first_name']);
+            $req->session()->put('last_name' , $user['prf_last_name']);
+            $req->session()->put('prf_email' , $user['prf_email']);
             return redirect('/connected');
         }
+        
     }
+    
+    
 }

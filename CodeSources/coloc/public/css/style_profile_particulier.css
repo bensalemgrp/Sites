@@ -5,23 +5,62 @@
     border: black solid 1px;
     border-radius: 10px;
 }
+/**********user_photo************/
+
 .cercle{
+    height: 148px;
     width: 150px;
-    height: 150px;
-    border: black solid 1px;
-    border-radius: 80px;
-    margin-left: 50px;
-    margin-top: 50px;
+    position: relative;
+    border: 3px solid gray;
+    border-radius: 50%;
+    background-image: url("/image/default.jpg");
+    background-size: 100% 100%;
+    margin: 50px 50px auto;
+    overflow: hidden;
+    left: 30px;
 }
-.cercle .fa-camera{
-    margin-left: 60px;
-    margin-top: 60px;
-    font-size: 30px;
-    color: rgb(63, 63, 63);
+.my_file{
+    position: absolute;
+    bottom: 0;
+    outline: none;
+    color: transparent;
+    box-sizing: border-box;
+    padding: 14px 55px;
+    cursor: pointer;
+    transition: 0.5s;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
 }
+.my_file::-webkit-file-upload-button{
+    visibility: hidden;
+}
+.my_file::before{
+    content: '\f030';
+    font-family: fontAwesome;
+    font-size: 29px;
+    color: #fff;
+    display:inline-block ;
+    height: 40px;
+    margin-left: 10px;
+}
+.my_file::after{
+    content: 'Update';
+    font-family: 'arial';
+    font-weight: bold;
+    color: #fff;
+    display: block;
+    top: 42px;
+    font-size: 14px;
+    position: absolute;
+    
+}
+.my_file:hover{
+    opacity: 1;
+}
+/*****************************/
 .formulaire_profile_particulier{
     width: 800px;
-    height: 500px;
+    height: 520px;
     margin-left: 200px;
     margin-top: 30px;
     border: black solid 1px;
@@ -80,27 +119,29 @@
 .enregistre ,.Désactiver_Supprimer{
     float: left;
 }
+.erreur{
+    color: rgb(128, 35, 35);
+    position: absolute;
+    margin-left: 200px;
+    margin-top: 20px;
+    background-color: rgba(224, 174, 174, 0.582);
+    width: 400px;
+    font-size: large;
+    text-align: center;
+}
 /******* profile_particulier********/
 
 .particulier li{
     float: left;
     list-style: none;
 }
-.donner_particulier li{
-    list-style: none;
-    float: none;
-    line-height: 40px;
-}
+
 .donner_particulier{
-    margin-top: 20px;
+    margin-top: 80px;
     margin-left: 50px;
 }
 
-.information_particulier{
-    margin-left: 200px;
-    line-height: 25px;
-    margin-top: -20px;
-}
+
 /******* profile_agence********/
 .formulaire_profile_agence{
     width: 800px;
@@ -131,4 +172,56 @@
 .label{
     line-height: 20px;
 }
+/******box_desactiver*******/
+.box_desactiver{
+    visibility: hidden;
+    opacity: 0;
+    border: gray solid 1px;
+    border-radius: 15px;
+    background-color: white;
+    width: 500px;
+    height: 200px;
+    position: absolute;
+    font-size: x-large;
+    max-width: 90%;
+    margin-left: 30%;
+    margin-top: 35%;
+}
+.box_desactiver:target{
+    visibility: visible;
+    opacity: 1;
     
+}
+.text_desactiver{
+    margin-top: 40px;
+    text-align: center;
+    line-height:40px;
+}
+.fa-exclamation-triangle{
+    margin-top: 30px;
+    position: absolute;
+    margin-left: 15px;
+    font-size: 35px;
+}
+.botton_desactiver{
+    border: gray solid 1px;
+    border-radius: 15px;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    margin-left: 100px;
+    width: 100px;
+    height: 30px;
+    font-size: medium;
+}
+.botton_annuler{
+    border: black solid 1px;
+    border-radius: 15px;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    margin-left: 50px;
+    width: 100px;
+    height: 30px;
+    font-size: medium;
+}
