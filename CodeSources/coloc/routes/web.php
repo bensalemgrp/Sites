@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\AddUserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AnnonceController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,14 +18,29 @@ use App\Http\Controllers\AnnonceController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/annonce','AnnonceController@index');
-Route::get('/annonce', function () {
-    return view('annonce');
-});
-Route::resource('annonce','AnnonceController');
-Route::post('/annonce', 'AnnonceController@store')->name('annonce');
-Route::view('/annonce', 'annonce');
 
+
+
+
+
+/**/
+Route::get('annonce',[AnnonceController::class,'store']);
+Route::get('/annonce', [AnnonceController::class,'index']);
+Route::post('/getState', [AnnonceController::class,'getState']);
+Route::post('/getDepartement', [AnnonceController::class,'getDepartement']);
+Route::post('/getCity', [AnnonceController::class,'getCity']);
+
+// Route::get('annonce',[AnnonceController::class,'create']);
+
+
+// Route::get('/annonce', function () {
+//     return view('annonce');
+// });
+// Route::resource('annonce','AnnonceController');
+Route::post('/annonce', 'AnnonceController@store')->name('annonce');
+// Route::view('/annonce', 'annonce');
+
+/* */
 Route::get('/mdp', function () {
     return view('mdp_oublié');
 });

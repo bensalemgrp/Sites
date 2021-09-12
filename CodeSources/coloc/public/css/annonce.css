@@ -1,172 +1,80 @@
+body {
+    background: #F1F1F1;
+}
+
+form {
+    width: 75%;
+}
+
 fieldset {
     background-color: white;
     margin-top: 5%;
     border: none;
     height: auto;
-    width: 55%;
+    width: 45%;
     padding: 40px;
     border-radius: 17px;
-    margin-left: 21%;
+    margin-left: 40%;
+    margin-top: 2%;
 }
 
-fieldset input {
-    height: 30px;
-    width: 50%;
-    margin-left: 35%;
-    border-radius: 5px;
-    border: 0.5px solid rgb(187, 184, 184);
-    background: rgb(246, 246, 246);
+.icon {
+    margin-left: 40%;
+    font-size: 35px;
 }
 
-#location {
-    width: 2%;
-    margin-left: 2%;
+h3 {
+    margin-left: 34%;
+    margin-top: -1%;
 }
 
-#colocation {
-    width: 2%;
-    margin-left: 5%;
-}
 
-#Adresse {
-    margin-left: 25%;
-    width: 50.4%;
-    height: 30px;
-    background: rgb(246, 246, 246);
-    border-radius: 5px;
-}
+/************************************** PHOTO ***************************************/
 
-#comments {
-    float: left;
-    width: 100%;
-    height: 155px;
-    background: rgb(246, 246, 246);
-    border-radius: 5px;
-}
-
-#dateDispo {
-    width: 50%;
-    margin-left: 16.5%;
-}
-
-#GES {
-    margin-left: 29.5%;
-    width: 50%;
-    height: 30px;
-    border-radius: 5px;
-    background: rgb(246, 246, 246);
-}
-
-#etage {
-    margin-top: -7%;
-}
-
-#surface {
-    margin-left: 26.6%;
-}
-
-#charge {
-    margin-left: 26%;
-}
-
-#caution {
-    margin-left: 25.5%;
-}
-
-#prix {
-    margin-left: 30%;
-}
-
-#typeAnnonce {
-    height: 30px;
-    width: 50%;
-    margin-left: 18.5%;
-    border-radius: 5px;
-    border: 0.5px solid rgb(187, 184, 184);
-    background: rgb(246, 246, 246);
-}
-
-#nombrePiece {
-    margin-top: -5%;
-}
-
-#categorie {
-    margin-left: 24%;
-}
-
-label {
+.label-file {
+    cursor: pointer;
+    color: black;
     font-weight: bold;
+    background: rgb(224, 223, 223);
+    padding: 8px;
+    margin-left: 30%;
+    border-radius: 8px;
+    margin-top: 25%;
 }
 
-#sauvegarde {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    cursor: pointer;
-    margin: 5px;
-    float: right;
-    margin-top: -0.1%;
-    margin-right: 2%;
+.label-file:hover {
+    color: rgb(110, 109, 109);
 }
 
-#Annuler {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    cursor: pointer;
-    float: right;
+.input-file {
+    display: none;
+    width: 300px;
 }
-
-#Annuler a {
-    text-decoration: none;
-    color: white;
-}
-
-#title {
-    margin-left: 39%;
-}
-
-body {
-    background: #F1F1F1;
-}
-
-hr {
-    font-size: 12px;
-}
-
-html,
-body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-}
-
-#part-2 {
-    float: right;
-    width: 40%;
-    margin-right: 15%;
-}
-
-
-/**/
 
 fieldset .block {
     max-width: 250px;
-    max-height: 295px;
+    height: 200px;
     overflow: auto;
-    margin-left: 30%;
+    margin-left: 20%;
+    margin-top: -10%;
+}
+
+#part-photo {
+    height: 200px;
+}
+
+#pic-icon {
+    width: 85%;
+    height: 120px;
+    margin-left: 5%;
+    margin-top: 15%;
+    border: 0.5px solid rgb(214, 214, 214);
+    padding: 15px;
+    border-radius: 8px;
 }
 
 .Imgpreview img {
-    width: 150px!important;
+    width: 195px!important;
     height: 140px;
     border-radius: 10px;
     box-shadow: 0 5px 15px -8px rgba(0, 0, 0, .24), 0 8px 10px -5px rgba(0, 0, 0, .2);
@@ -174,6 +82,305 @@ fieldset .block {
     cursor: pointer;
     gap: 30px;
     margin-top: 1%;
+    z-index: -1;
+}
+
+.Imgpreview {
+    margin: 2px;
+}
+
+.preview {
+    display: flex;
+    flex-direction: row;
+    justify-content: space;
+}
+
+
+/* width */
+
+ ::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+}
+
+.Imgpreview i.remove {
+    border-radius: 50%;
+    background-color: #d6d6d6;
+    cursor: pointer;
+    font-size: medium;
+    padding: 3px;
+    font-weight: 900;
+    z-index: 1080;
+    left: 30%;
+    position: initial;
+    width: 35%;
+}
+
+
+/******************************************/
+
+label {
+    font-weight: bold;
+}
+
+#type_annonce {
+    width: 70%;
+    height: 30px;
+    border-radius: 6px;
+    margin-left: 0%;
+}
+
+#type_logement {
+    width: 69.5%;
+    height: 30px;
+    border-radius: 6px;
+    margin-left: -2%;
+}
+
+#pays {
+    width: 69.5%;
+    height: 30px;
+    border-radius: 6px;
+    margin-left: 13.5%;
+}
+
+#region {
+    width: 69.5%;
+    height: 30px;
+    border-radius: 6px;
+    margin-left: 10.5%;
+}
+
+#departement {
+    width: 69.5%;
+    height: 30px;
+    border-radius: 6px;
+    margin-left: 1%;
+}
+
+#ville {
+    width: 69.5%;
+    height: 30px;
+    border-radius: 6px;
+    margin-left: 14.5%;
+}
+
+#titre-annonce {
+    width: 70%;
+    height: 27px;
+    border-radius: 6px;
+    border: 0.5px solid grey;
+    margin-left: 16%;
+}
+
+#type-bien {
+    width: 70%;
+    height: 30px;
+    border-radius: 6px;
+    margin-left: 1%;
+}
+
+#occupant {
+    width: 50%;
+    height: 27px;
+    border-radius: 6px;
+    border: 0.5px solid grey;
+    margin-left: 1%;
+}
+
+#Piece {
+    margin-left: 35%;
+}
+
+#adresse {
+    width: 70%;
+    height: 27px;
+    border-radius: 6px;
+    border: 0.5px solid grey;
+    margin-left: 9.3%;
+}
+
+#piece {
+    width: 50%;
+    height: 27px;
+    border-radius: 6px;
+    border: 0.5px solid grey;
+}
+
+#chambre {
+    width: 50%;
+    height: 27px;
+    border-radius: 6px;
+    border: 0.5px solid grey;
+}
+
+#meuble {
+    width: 50%;
+    height: 27px;
+    border-radius: 6px;
+    border: 0.5px solid grey;
+}
+
+#surface {
+    width: 50%;
+    height: 27px;
+    border-radius: 6px;
+    border: 0.5px solid grey;
+    margin-left: 17.5%;
+}
+
+#etage {
+    width: 50%;
+    height: 27px;
+    border-radius: 6px;
+    border: 0.5px solid grey;
+    margin-left: 6%;
+}
+
+#date {
+    width: 50%;
+    height: 27px;
+    border-radius: 6px;
+    border: 0.5px solid grey;
+    margin-left: 0.2%;
+}
+
+#prix {
+    width: 50%;
+    height: 27px;
+    border-radius: 6px;
+    border: 0.5px solid grey;
+    margin-left: 18%;
+}
+
+#charge {
+    width: 50%;
+    height: 27px;
+    border-radius: 6px;
+    border: 0.5px solid grey;
+    margin-left: 13.8%;
+}
+
+#caution {
+    width: 50%;
+    height: 27px;
+    border-radius: 6px;
+    border: 0.5px solid grey;
+    margin-left: 12.8%;
+}
+
+#handicap {
+    width: 50%;
+    height: 27px;
+    border-radius: 6px;
+    border: 0.5px solid grey;
+    margin-left: 1%;
+}
+
+#fille {
+    width: 50%;
+    height: 27px;
+    border-radius: 6px;
+    border: 0.5px solid grey;
+    margin-left: 7.7%;
+}
+
+#garçon {
+    width: 50%;
+    height: 27px;
+    border-radius: 6px;
+    border: 0.5px solid grey;
+    margin-left: 3.5%;
+}
+
+#animaux {
+    width: 50%;
+    height: 27px;
+    border-radius: 6px;
+    border: 0.5px solid grey;
+    margin-left: 6.5%;
+}
+
+#fumeurs {
+    width: 50%;
+    height: 27px;
+    border-radius: 6px;
+    border: 0.5px solid grey;
+    margin-left: 6.8%;
+}
+
+#GES {
+    width: 50%;
+    height: 27px;
+    border-radius: 6px;
+    border: 0.5px solid grey;
+    margin-left: 26%;
+}
+
+#energie {
+    width: 50%;
+    height: 27px;
+    border-radius: 6px;
+    border: 0.5px solid grey;
+    margin-left: 12.5%;
+}
+
+#ascenceur {
+    width: 50%;
+    height: 27px;
+    border-radius: 6px;
+    border: 0.5px solid grey;
+    margin-left: 18.8%;
+}
+
+#message {
+    width: 70%;
+    height: 245px;
+    border-radius: 6px;
+    border: 0.5px solid grey;
+    margin-left: 15%;
+    padding: 8px;
+}
+
+#sauvegarde {
+    float: right;
+    width: 20%;
+    height: 35px;
+    border-radius: 8px;
+    background-color: blue;
+    color: white;
+    border: 0.5px solid blue;
+    cursor: pointer;
+}
+
+#Annuler {
+    margin-left: 57%;
+    width: 20%;
+    height: 35px;
+    border-radius: 8px;
+    background-color: red;
+    border: 0.5px solid red;
+    cursor: pointer;
+}
+
+#Annuler a {
+    text-decoration: none;
+    color: white;
 }
 
 .invalid-feed {
@@ -192,39 +399,3 @@ fieldset .block {
     margin-top: 1%;
     margin-left: 2%;
 }
-
-input[type="file"] {
-    font-size: 17px;
-    color: #b8b8b8;
-    background: #e7e7e7;
-    border: none;
-    border-radius: 3px;
-    padding: 8px;
-    cursor: pointer;
-    text-shadow: 1px 1px #fff;
-    color: black;
-    width: 125px;
-    height: 35px;
-    margin-left: 40%;
-    margin-top: 5%;
-}
-
-.Imgpreview {
-    margin: 0 auto;
-}
-
-.Imgpreview i.remove {
-    border-radius: 50%;
-    background-color: #d6d6d6;
-    cursor: pointer;
-    font-size: medium;
-    padding: 3px;
-    font-weight: 900;
-    z-index: 1080;
-    left: 30%;
-    position: initial;
-    width: 35%;
-}
-
-
-/**/
