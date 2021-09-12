@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `ann_annonce` (
-  `ann_ref` varchar(64) DEFAULT NULL,
+  `ann_ref`  INT NOT NULL AUTO_INCREMENT,
   `ann_titre` varchar(255) DEFAULT NULL,
   `ann_description` longtext,
   `ann_dateCreation` datetime(6) DEFAULT NULL,
@@ -75,17 +75,6 @@ INSERT INTO `ann_annonce` (`ann_ref`, `ann_titre`, `ann_description`, `ann_dateC
 (NULL, 'titre', 'salutation', NULL, NULL, NULL, '2020-01-28 00:00:00.000000', 1, NULL, '1.000', 1, 2, 2, 'Oui', 'Non', 'B', 'B', 'Appartement', 'Location', 2, 5, 17, 16, '57466', 'Capture.PNG', NULL, 'Oui', 2, 'Oui', 'Oui', 'Oui', 'Oui', 11, 54, 45, NULL);
 
 -- --------------------------------------------------------
-
---
--- Table structure for table `com_commune`
---
-
-CREATE TABLE `com_commune` (
-  `com_id` int(11) NOT NULL,
-  `dep_id` int(11) DEFAULT NULL,
-  `description` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 -- --------------------------------------------------------
 
 --
@@ -93,7 +82,7 @@ CREATE TABLE `com_commune` (
 --
 
 CREATE TABLE `dep_departement` (
-  `dep_id` int(11) NOT NULL,
+  `dep_id` int(11) NOT NULL AUTO_INCREMENT,
   `reg_id` int(11) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -131,10 +120,9 @@ INSERT INTO `dep_departement` (`dep_id`, `reg_id`, `description`) VALUES
 --
 
 CREATE TABLE `img_images` (
-  `img_id_images` varchar(64) NOT NULL,
-  `img_CheminImage` varchar(255) DEFAULT NULL,
-  `img_num_images` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `img_id_images` INT NOT NULL AUTO_INCREMENT,
+  `img_CheminImage` varchar(255) DEFAULT NULL) 
+  ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -143,7 +131,7 @@ CREATE TABLE `img_images` (
 --
 
 CREATE TABLE `pay_pays` (
-  `pay_id` int(11) NOT NULL,
+  `pay_id` INT NOT NULL AUTO_INCREMENT,
   `description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -172,7 +160,7 @@ INSERT INTO `pay_pays` (`pay_id`, `description`) VALUES
 --
 
 CREATE TABLE `prf_profiles` (
-  `prf_id` int(11) UNSIGNED NOT NULL,
+  `prf_id` INT NOT NULL AUTO_INCREMENT,
   `prf_first_name` varchar(50) NOT NULL,
   `prf_last_name` varchar(50) NOT NULL,
   `prf_email` varchar(30) DEFAULT NULL,
@@ -207,7 +195,7 @@ INSERT INTO `prf_profiles` (`prf_id`, `prf_first_name`, `prf_last_name`, `prf_em
 --
 
 CREATE TABLE `reg_region` (
-  `reg_id` int(11) NOT NULL,
+  `reg_id` INT NOT NULL AUTO_INCREMENT,
   `pay_id` int(11) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -279,7 +267,7 @@ INSERT INTO `reg_region` (`reg_id`, `pay_id`, `description`) VALUES
 --
 
 CREATE TABLE `tya_annonce` (
-  `tya_id_annonce` int(11) NOT NULL,
+  `tya_id_annonce` INT NOT NULL AUTO_INCREMENT,
   `description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -298,7 +286,7 @@ INSERT INTO `tya_annonce` (`tya_id_annonce`, `description`) VALUES
 --
 
 CREATE TABLE `tyb_typebien` (
-  `tyb_id_bien` varchar(255) NOT NULL,
+  `tyb_id_bien` INT NOT NULL AUTO_INCREMENT,
   `description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -309,7 +297,7 @@ CREATE TABLE `tyb_typebien` (
 --
 
 CREATE TABLE `tyl_typelogement` (
-  `tyl_id_typeLogement` int(11) NOT NULL,
+  `tyl_id_typeLogement` INT NOT NULL AUTO_INCREMENT,
   `description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -320,7 +308,7 @@ CREATE TABLE `tyl_typelogement` (
 --
 
 CREATE TABLE `type_usertype` (
-  `id_typeuser` varchar(255) NOT NULL,
+  `id_typeuser` INT NOT NULL AUTO_INCREMENT,
   `description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -331,7 +319,7 @@ CREATE TABLE `type_usertype` (
 --
 
 CREATE TABLE `validated_user` (
-  `id_validation` varchar(255) NOT NULL,
+  `id_validation` INT NOT NULL AUTO_INCREMENT,
   `prf_id` int(11) NOT NULL,
   `codeValidation` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -343,7 +331,7 @@ CREATE TABLE `validated_user` (
 --
 
 CREATE TABLE `vill_ville` (
-  `ville_id` int(11) NOT NULL,
+  `ville_id` INT NOT NULL AUTO_INCREMENT,
   `dep_id` int(11) DEFAULT NULL,
   `Code_postale` int(11) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL
