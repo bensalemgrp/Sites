@@ -33,14 +33,15 @@ class LoginController extends Controller
             'password'=>'required'
         ]);
         $user = prf_profile::where(['prf_email'=>$req->email])->first();
+        
+         
         if(!$user || Hash::check($req->password,$user->prf_password))
         {    
-            
-            $req->session()->flash('notification', 'Your email and password is does exist!');
+            $req->session()->flash('notification', 'Your email is not exist!');
             return redirect('/login');
         }
         else{
-           
+           if ($user['prf_password']==$req['password']) {
             $req->session()->put('user',$user);
             $req->session()->put('first_user_name' , $user['prf_first_name']);
             $req->session()->put('last_user_name' , $user['prf_last_name']);
@@ -48,6 +49,17 @@ class LoginController extends Controller
             $req->session()->put('last_name' , $user['prf_last_name']);
             $req->session()->put('prf_email' , $user['prf_email']);
             return redirect('/connected');
+
+            if ($user['id_typeuser']=='Particulier') {
+                $req->session()->put('profile','profile_particulier');
+            }else{
+                $req->session()->put('profile','profile_agence');
+            }
+            
+           }else{
+            $req->session()->flash('notification', 'Your password is incorrect !');
+            return redirect('/login');
+           }
         }
         
     }

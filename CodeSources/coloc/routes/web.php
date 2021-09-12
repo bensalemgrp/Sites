@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+
 use App\Http\Controllers\AddUserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AnnonceController;
 
 /*
@@ -78,24 +79,21 @@ Route::get('/profile_particulier', function () {
 });
 
 Route::view('registre', 'registre');
-Route::post('registre', 'App\Http\Controllers\AddUserController@addUser');
-
+Route::post('registre', 'AddUserController@addUser');
 
 Route::view('login', 'login');
-Route::post('login', 'App\Http\Controllers\LoginController@login');
-
-
+Route::post('login', 'LoginController@login');
 
 Route::view('mdp_oublié', 'mdp_oublié');
-Route::post('mdp_oublié', 'App\Http\Controllers\LoginController@VerifierUser');
+Route::post('mdp_oublié', 'LoginController@VerifierUser');
 
 Route::view('profile_particulier', 'profile_particulier');
-Route::post('profile_particulier', 'App\Http\Controllers\ProfileController@ProfileParticulier');
+Route::post('profile_particulier', 'ProfileController@ProfileParticulier');
 
 
 
 Route::view('profile_agence', 'profile_agence');
-Route::post('profile_agence', 'App\Http\Controllers\ProfileController@ProfileAgence');
+Route::post('profile_agence', 'ProfileController@ProfileAgence');
 
 Route::view('header_connected', 'header_connected');
-Route::post('heafer_connected', 'App\Http\Controllers\ProfileController@Profile');
+Route::post('heafer_connected', 'ProfileController@Profile');

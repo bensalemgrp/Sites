@@ -51,7 +51,7 @@
                 <i class="fas fa-user fa-customize" id="fa-user"></i>
             </div>
         </div>
-            <div id="profile"><a href="profile_particulier" >Profile</a></div><br>
+            <div id="profile"><a href="{{session('profile')}}" >Profile</a></div><br>
             <div id="deconnecter"><a href="/">Déconnecter</a></div>
         </div>
     </div></a>

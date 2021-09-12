@@ -10,6 +10,11 @@
 <body >
 @extends('master_connected')
 @section('content')   
+
+
+        
+        
+
 <div class="box_desactiver " id="desactiver">
     <i class="fas fa-exclamation-triangle"></i>
     <p class="text_desactiver">voulez-vous désactivé votre profile?<br>
@@ -20,12 +25,23 @@
     <div class="profile">
         <form action="profile_particulier" method="POST" enctype="multipart/form-data">
         @csrf 
+        
         <ul class="particulier">
             
             <li>
                 <div class="cercle">
-                    <input type="file" class="my_file" name="photo">
+                    <div class="row col-md-12 ml-auto mr-auto preview ">
+                        <img src="/image/default.jpg" style="height: 160px" id="avatar"></div>
+                <input  class="my_file" type="file" accept="image/png, image/jpeg/*" onchange="previewFiles() " id="inputUp">
                 </div>
+                @error('photo')
+                <div class="invalid-feed">
+                    <p>{{ $errors->first('photo') }}</p>
+                </div>
+                @enderror
+                <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+                <script src="/js/script.js"></script>
+                <script src='https://unpkg.com/tippy.js@4'></script>
             </li>
             <li>
                 <table class="donner_particulier">
