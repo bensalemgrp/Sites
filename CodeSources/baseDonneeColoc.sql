@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `ann_annonce` (
-  `ann_ref`  INT NOT NULL AUTO_INCREMENT,
+  `ann_ref`  INT AUTO_INCREMENT PRIMARY KEY,
   `ann_titre` varchar(255) DEFAULT NULL,
   `ann_description` longtext,
   `ann_dateCreation` datetime(6) DEFAULT NULL,
@@ -66,14 +66,14 @@ CREATE TABLE `ann_annonce` (
   `ann_caution` int(11) DEFAULT NULL,
   `ann_fraisAgence` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
+ 
 --
 -- Dumping data for table `ann_annonce`
 --
 
 INSERT INTO `ann_annonce` (`ann_ref`, `ann_titre`, `ann_description`, `ann_dateCreation`, `ann_dateModification`, `ann_dateValidite`, `ann_disponible`, `tya_id_annonce`, `ann_anneeConstruction`, `ann_surface`, `ann_numEtage`, `ann_nombrePiece`, `ann_nombreChambre`, `ann_ascenceur`, `ann_meuble`, `ann_classEnergie`, `ann_classGES`, `tyb_id_bien`, `tyl_id_typelogement`, `ville_id`, `pay_id`, `reg_id`, `dep_id`, `ann_address`, `img_id_images`, `prf_id`, `ann_accessibiliteHandicap`, `ann_nbrdOccupant`, `ann_fillesUuniquement`, `ann_FumeursAutorises`, `ann_AnimauxAutorises`, `ann_GarçonsUniquement`, `ann_prix`, `ann_charge`, `ann_caution`, `ann_fraisAgence`) VALUES
-(NULL, 'titre', 'salutation', NULL, NULL, NULL, '2020-01-28 00:00:00.000000', 1, NULL, '1.000', 1, 2, 2, 'Oui', 'Non', 'B', 'B', 'Appartement', 'Location', 2, 5, 17, 16, '57466', 'Capture.PNG', NULL, 'Oui', 2, 'Oui', 'Oui', 'Oui', 'Oui', 11, 54, 45, NULL);
-
+(1, 'titre', 'salutation', NULL, NULL, NULL, '2020-01-28 00:00:00.000000', 1, NULL, '1.000', 1, 2, 2, 'Oui', 'Non', 'B', 'B', 'Appartement', 'Location', 2, 5, 17, 16, '57466', 'Capture.PNG', NULL, 'Oui', 2, 'Oui', 'Oui', 'Oui', 'Oui', 11, 54, 45, NULL);
+ 
 -- --------------------------------------------------------
 -- --------------------------------------------------------
 
@@ -82,7 +82,7 @@ INSERT INTO `ann_annonce` (`ann_ref`, `ann_titre`, `ann_description`, `ann_dateC
 --
 
 CREATE TABLE `dep_departement` (
-  `dep_id` int(11) NOT NULL AUTO_INCREMENT,
+  `dep_id`  INT AUTO_INCREMENT PRIMARY KEY,
   `reg_id` int(11) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -90,7 +90,7 @@ CREATE TABLE `dep_departement` (
 --
 -- Dumping data for table `dep_departement`
 --
-
+ 
 INSERT INTO `dep_departement` (`dep_id`, `reg_id`, `description`) VALUES
 (1, 1, 'Abomey-Calavi'),
 (2, 1, 'Allada'),
@@ -112,7 +112,7 @@ INSERT INTO `dep_departement` (`dep_id`, `reg_id`, `description`) VALUES
 (18, 17, 'Indre et Loire'),
 (19, 17, 'Loir et Cher'),
 (20, 17, 'Loiret');
-
+ 
 -- --------------------------------------------------------
 
 --
@@ -120,7 +120,7 @@ INSERT INTO `dep_departement` (`dep_id`, `reg_id`, `description`) VALUES
 --
 
 CREATE TABLE `img_images` (
-  `img_id_images` INT NOT NULL AUTO_INCREMENT,
+  `img_id_images` INT AUTO_INCREMENT PRIMARY KEY,
   `img_CheminImage` varchar(255) DEFAULT NULL) 
   ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -131,14 +131,14 @@ CREATE TABLE `img_images` (
 --
 
 CREATE TABLE `pay_pays` (
-  `pay_id` INT NOT NULL AUTO_INCREMENT,
+  `pay_id` INT AUTO_INCREMENT PRIMARY KEY,
   `description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pay_pays`
 --
-
+  
 INSERT INTO `pay_pays` (`pay_id`, `description`) VALUES
 (1, 'les Etats-Unis'),
 (2, 'Chine'),
@@ -152,7 +152,7 @@ INSERT INTO `pay_pays` (`pay_id`, `description`) VALUES
 (10, 'Coré du Sud'),
 (11, 'Russe'),
 (12, 'Espagne');
-
+ 
 -- --------------------------------------------------------
 
 --
@@ -160,7 +160,7 @@ INSERT INTO `pay_pays` (`pay_id`, `description`) VALUES
 --
 
 CREATE TABLE `prf_profiles` (
-  `prf_id` INT NOT NULL AUTO_INCREMENT,
+  `prf_id` INT AUTO_INCREMENT PRIMARY KEY,
   `prf_first_name` varchar(50) NOT NULL,
   `prf_last_name` varchar(50) NOT NULL,
   `prf_email` varchar(30) DEFAULT NULL,
@@ -183,19 +183,21 @@ CREATE TABLE `prf_profiles` (
 --
 -- Déchargement des données de la table `prf_profiles`
 --
-
+  
 INSERT INTO `prf_profiles` (`prf_id`, `prf_first_name`, `prf_last_name`, `prf_email`, `prf_password`, `id_typeuser`, `prf_logo`, `prf_phone`, `prf_adress`, `id_ville`, `prf_isValidated`, `prf_date_naissance`, `prf_sexe`, `prf_NumSIRN`, `prf_nameofcompany`, `prf_siteweb`, `prf_activity`, `prf_statut`) VALUES
 (1, 'souzane', 'janson', 'souzane@gmail.com', 'souzane', 'Particulier', '\r\n', '+216 95478126', 'paris', 0, NULL, '2021-09-09 00:00:00', 'femme', NULL, NULL, NULL, 'étudiante', 0),
 (2, 'test1', 'testeur1', 'test@test.com', 'test', 'Particulier', '\r\n', '+216 95478126', 'paris', 0, NULL, '2021-09-29 00:00:00', 'homme', NULL, NULL, NULL, 'étudiante', 0),
 (3, 'testeur1', 'test1', 'test1@test.com', 'test1', 'Agence', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0);
--- --------------------------------------------------------
+ 
+ 
+ -- --------------------------------------------------------
 
 --
 -- Table structure for table `reg_region`
 --
 
 CREATE TABLE `reg_region` (
-  `reg_id` INT NOT NULL AUTO_INCREMENT,
+  `reg_id` INT AUTO_INCREMENT PRIMARY KEY,
   `pay_id` int(11) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -203,7 +205,7 @@ CREATE TABLE `reg_region` (
 --
 -- Dumping data for table `reg_region`
 --
-
+ 
 INSERT INTO `reg_region` (`reg_id`, `pay_id`, `description`) VALUES
 (1, 1, 'Mi-atlantique'),
 (2, 2, 'Níngxià?'),
@@ -259,26 +261,26 @@ INSERT INTO `reg_region` (`reg_id`, `pay_id`, `description`) VALUES
 (52, 12, 'Carélie'),
 (53, 12, 'Sibérie'),
 (54, 12, ' Kamtchatka');
-
--- --------------------------------------------------------
+ 
+-- -- ------------------------------------------------------
 
 --
 -- Table structure for table `tya_annonce`
 --
 
 CREATE TABLE `tya_annonce` (
-  `tya_id_annonce` INT NOT NULL AUTO_INCREMENT,
+  `tya_id_annonce` INT AUTO_INCREMENT PRIMARY KEY,
   `description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tya_annonce`
 --
-
+ 
 INSERT INTO `tya_annonce` (`tya_id_annonce`, `description`) VALUES
 (1, 'Offre'),
 (2, 'Demande');
-
+ 
 -- --------------------------------------------------------
 
 --
@@ -286,7 +288,7 @@ INSERT INTO `tya_annonce` (`tya_id_annonce`, `description`) VALUES
 --
 
 CREATE TABLE `tyb_typebien` (
-  `tyb_id_bien` INT NOT NULL AUTO_INCREMENT,
+  `tyb_id_bien` INT AUTO_INCREMENT PRIMARY KEY,
   `description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -297,7 +299,7 @@ CREATE TABLE `tyb_typebien` (
 --
 
 CREATE TABLE `tyl_typelogement` (
-  `tyl_id_typeLogement` INT NOT NULL AUTO_INCREMENT,
+  `tyl_id_typeLogement` INT AUTO_INCREMENT PRIMARY KEY,
   `description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -308,7 +310,7 @@ CREATE TABLE `tyl_typelogement` (
 --
 
 CREATE TABLE `type_usertype` (
-  `id_typeuser` INT NOT NULL AUTO_INCREMENT,
+  `id_typeuser` INT AUTO_INCREMENT PRIMARY KEY,
   `description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -319,7 +321,7 @@ CREATE TABLE `type_usertype` (
 --
 
 CREATE TABLE `validated_user` (
-  `id_validation` INT NOT NULL AUTO_INCREMENT,
+  `id_validation` INT AUTO_INCREMENT PRIMARY KEY,
   `prf_id` int(11) NOT NULL,
   `codeValidation` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -331,7 +333,7 @@ CREATE TABLE `validated_user` (
 --
 
 CREATE TABLE `vill_ville` (
-  `ville_id` INT NOT NULL AUTO_INCREMENT,
+  `ville_id` INT AUTO_INCREMENT PRIMARY KEY,
   `dep_id` int(11) DEFAULT NULL,
   `Code_postale` int(11) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL
@@ -340,7 +342,7 @@ CREATE TABLE `vill_ville` (
 --
 -- Dumping data for table `vill_ville`
 --
-
+ 
 INSERT INTO `vill_ville` (`ville_id`, `dep_id`, `Code_postale`, `description`) VALUES
 (1, 16, NULL, 'Allineuc'),
 (2, 16, NULL, 'Binic'),
@@ -352,82 +354,8 @@ INSERT INTO `vill_ville` (`ville_id`, `dep_id`, `Code_postale`, `description`) V
 (8, 17, NULL, 'Anjouin'),
 (9, 17, NULL, 'Bommiers'),
 (10, 17, NULL, 'Brives');
+ 
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `com_commune`
---
-ALTER TABLE `com_commune`
-  ADD PRIMARY KEY (`com_id`);
-
---
--- Indexes for table `dep_departement`
---
-ALTER TABLE `dep_departement`
-  ADD PRIMARY KEY (`dep_id`);
-
---
--- Indexes for table `img_images`
---
-ALTER TABLE `img_images`
-  ADD PRIMARY KEY (`img_id_images`);
-
---
--- Indexes for table `pay_pays`
---
-ALTER TABLE `pay_pays`
-  ADD PRIMARY KEY (`pay_id`);
-
---
--- Indexes for table `prf_profile`
---
-ALTER TABLE `prf_profile`
-  ADD PRIMARY KEY (`prf_id`);
-
---
--- Indexes for table `reg_region`
---
-ALTER TABLE `reg_region`
-  ADD PRIMARY KEY (`reg_id`);
-
---
--- Indexes for table `tya_annonce`
---
-ALTER TABLE `tya_annonce`
-  ADD PRIMARY KEY (`tya_id_annonce`);
-
---
--- Indexes for table `tyb_typebien`
---
-ALTER TABLE `tyb_typebien`
-  ADD PRIMARY KEY (`tyb_id_bien`);
-
---
--- Indexes for table `tyl_typelogement`
---
-ALTER TABLE `tyl_typelogement`
-  ADD PRIMARY KEY (`tyl_id_typeLogement`);
-
---
--- Indexes for table `type_usertype`
---
-ALTER TABLE `type_usertype`
-  ADD PRIMARY KEY (`id_typeuser`);
-
---
--- Indexes for table `validated_user`
---
-ALTER TABLE `validated_user`
-  ADD PRIMARY KEY (`id_validation`);
-
---
--- Indexes for table `vill_ville`
---
-ALTER TABLE `vill_ville`
-  ADD PRIMARY KEY (`ville_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
