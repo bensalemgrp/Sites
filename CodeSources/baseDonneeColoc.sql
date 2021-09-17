@@ -53,7 +53,7 @@ CREATE TABLE `ann_annonce` (
   `reg_id` int(11) DEFAULT NULL,
   `dep_id` int(11) DEFAULT NULL,
   `ann_address` varchar(255) DEFAULT NULL,
-  `img_id_images` varchar(64) NOT NULL,
+  `img_id_images` INT NOT NULL,
   `prf_id` int(11) DEFAULT NULL,
   `ann_accessibiliteHandicap` varchar(255) NOT NULL,
   `ann_nbrdOccupant` int(11) DEFAULT NULL,
@@ -120,7 +120,7 @@ INSERT INTO `dep_departement` (`dep_id`, `reg_id`, `description`) VALUES
 --
 
 CREATE TABLE `img_images` (
-  `img_id_images` INT AUTO_INCREMENT PRIMARY KEY,
+  `img_id_images` INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
   `img_CheminImage` varchar(255) DEFAULT NULL) 
   ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
