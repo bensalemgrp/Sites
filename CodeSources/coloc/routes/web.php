@@ -109,7 +109,7 @@ Route::post('profile_particulier', 'ProfileController@ProfileParticulier');
 
 
 Route::view('profile_agence', 'profile_agence');
-Route::post('profile_agence', 'ProfileController@ProfileAgence');
+Route::post('profile_agence', 'ProfileController@ProfileParticulier');
 
 Route::view('header_connected', 'header_connected');
-Route::post('heafer_connected', 'ProfileController@Profile');
+Route::post('heafer_connected', 'LoginControllerr@login');

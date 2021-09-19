@@ -18,7 +18,7 @@
         <ul class="header1-ul">
             <li>
                 <div class="deposer">
-                    <a href="" ><label  >Déposer une annonce</label></a>
+                    <a href="annonce" ><label  >Déposer une annonce</label></a>
                 </div>
             </li> 
             <li>
@@ -51,6 +51,7 @@
                 <i class="fas fa-user fa-customize" id="fa-user"></i>
             </div>
         </div>
+       
             <div id="profile"><a href="{{session('profile')}}" >Profile</a></div><br>
             <div id="deconnecter"><a href="/">Déconnecter</a></div>
         </div>

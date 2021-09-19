@@ -49,9 +49,10 @@ class LoginController extends Controller
             $req->session()->put('last_name' , $user['prf_last_name']);
             $req->session()->put('prf_email' , $user['prf_email']);
             return redirect('/connected');
-
+            return $type=$user['id_typeuser'];
             if ($user['id_typeuser']=='Particulier') {
                 $req->session()->put('profile','profile_particulier');
+                return redirect('/profile_particulier');
             }else{
                 $req->session()->put('profile','profile_agence');
             }

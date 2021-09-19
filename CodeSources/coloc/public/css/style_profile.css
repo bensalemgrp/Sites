@@ -1,0 +1,254 @@
+body {
+    font-family: "Roboto", sans-serif;
+    
+  }
+.profile{
+    width: 800px;
+    height: 250px;
+    margin-left: 200px;
+    border: black solid 1px;
+    border-radius: 10px;
+}
+
+/**********user_photo************/
+.image-preview{
+   width: 180px;
+   height: 180px;
+   border: 2px solid #dddd;
+   border-radius: 50%;
+   margin-top: 15px;
+   background-image: url("/image/default.jpg");
+   background-size: cover;
+   overflow: hidden;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.image-preview__image{
+   display: none;
+   width: 100%;
+   size: cover;
+}
+
+.cercle{
+  position:relative;
+  max-height: 160px;
+  width: 185px;
+  padding-left: 2px;
+  border-radius: 49%;
+  padding-bottom: 38px;
+  background-size: cover;
+  overflow: hidden;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+#inpFile{
+   position: absolute;
+   bottom: 0;
+   outline: none;
+   color: transparent;
+   box-sizing: border-box;
+   padding: 15px 20px;
+   cursor: pointer;
+   transition: 0.5s;
+   background: rgba(0, 0, 0, 0.3);
+   width: 200px;
+   opacity: 0;
+  
+}
+#inpFile::-webkit-file-upload-button{
+   visibility: hidden;
+}
+#inpFile::before{
+   content: '\f030';
+   font-family: fontAwesome;
+   font-size: 29px;
+   color: #fff;
+   display:inline-block ;
+   height: 40px;
+   margin-left: 42%;
+}
+#inpFile::after{
+  content: 'Update';
+  font-family: 'arial';
+  font-weight: bold;
+  color: #fff;
+  display: block;
+  top: 48px;
+  font-size: 14px;
+  position: absolute;
+  margin-left: 30%;
+}
+#inpFile:hover{
+  opacity: 1;
+}
+.send_image{
+  width: 40px;
+  height: 40px;
+  border: 1px solid ;
+  background-color: #000;
+  color: white;
+  border-radius: 50%;
+  margin-left: 190px;
+  font-family: arial;
+  font-size: 15px;
+  visibility:visible;
+  margin-top: -40px;
+  position:absolute;
+}
+
+/*****************************/
+.formulaire_profile_particulier{
+    width: 800px;
+    height: 650px;
+    margin-left: 200px;
+    margin-top: 30px;
+    border: black solid 1px;
+    border-radius: 10px;
+}
+
+.Désactiver_Supprimer{
+   
+    margin-top: 20px;
+    margin-left: 200px;   
+}
+.Désactiver_Supprimer li{
+    list-style: none;
+    margin-top: 20px;
+}
+
+.enregistreP{
+    margin-top: 500px;
+    margin-left: 600px;
+    position: absolute;
+    border-radius: 10px;
+    border:solid 1px;
+    background-color: #166FE5;
+    color: white;
+    width: 100px;
+    height: 30px;
+}
+.enregistreA{
+    margin-top: 590px;
+    margin-left: 600px;
+    position: absolute;
+    border-radius: 10px;
+    border:solid 1px;
+    background-color: #166FE5;
+    color: white;
+    width: 100px;
+    height: 30px;
+}
+.enregistre ,.Désactiver_Supprimer{
+    float: left;
+}
+.erreur{
+    color: rgb(128, 35, 35);
+    position: absolute;
+    margin-left: 200px;
+    margin-top: 20px;
+    background-color: rgba(224, 174, 174, 0.582);
+    width: 400px;
+    font-size: large;
+    text-align: center;
+}
+.formulaire{
+    margin-left: 250px;
+    margin-top: 80px;
+}
+.formulaire td{ 
+    width: 700px;
+    height: 40px;
+  }
+/******* profile_particulier********/
+.particulier{
+   position: unset;
+}
+.particulier li{
+    float: left;
+    list-style: none;
+}
+.donner_particulier{
+    margin-top: 50px;
+    margin-left: 100px;
+}
+.donner_particulier tr{
+    line-height: 30px;
+}
+/******* profile_agence********/
+.formulaire_profile_agence{
+    width: 800px;
+    height: 750px;
+    margin-left: 200px;
+    margin-top: 30px;
+    border: black solid 1px;
+    border-radius: 10px;
+}
+.agence li{
+    float: left;
+    list-style: none;
+}
+
+.donner_agence{
+    margin-top: 50px;
+    margin-left: 60px;
+}
+.donner_agence tr{
+    line-height: 30px;
+}
+/******box_desactiver*******/
+.box_desactiver{
+    visibility: hidden;
+    opacity: 0;
+    border: gray solid 1px;
+    border-radius: 15px;
+    background-color: white;
+    width: 500px;
+    height: 200px;
+    position: absolute;
+    font-size: x-large;
+    max-width: 90%;
+    margin-left: 30%;
+    margin-top: 35%;
+}
+.box_desactiver:target{
+    visibility: visible;
+    opacity: 1;
+    
+}
+.text_desactiver{
+    margin-top: 40px;
+    text-align: center;
+    line-height:40px;
+}
+.fa-exclamation-triangle{
+    margin-top: 30px;
+    position: absolute;
+    margin-left: 15px;
+    font-size: 35px;
+}
+.botton_desactiver{
+    border: gray solid 1px;
+    border-radius: 15px;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    margin-left: 100px;
+    width: 100px;
+    height: 30px;
+    font-size: medium;
+}
+.botton_annuler{
+    border: black solid 1px;
+    border-radius: 15px;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    margin-left: 50px;
+    width: 100px;
+    height: 30px;
+    font-size: medium;
+}
+
+
