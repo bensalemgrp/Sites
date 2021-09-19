@@ -65,15 +65,18 @@ CREATE TABLE `ann_annonce` (
   `ann_charge` int(11) DEFAULT NULL,
   `ann_caution` int(11) DEFAULT NULL,
   `ann_fraisAgence` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ 
+ 
+  
+  
  
 --
 -- Dumping data for table `ann_annonce`
 --
 
-INSERT INTO `ann_annonce` (`ann_ref`, `ann_titre`, `ann_description`, `ann_dateCreation`, `ann_dateModification`, `ann_dateValidite`, `ann_disponible`, `tya_id_annonce`, `ann_anneeConstruction`, `ann_surface`, `ann_numEtage`, `ann_nombrePiece`, `ann_nombreChambre`, `ann_ascenceur`, `ann_meuble`, `ann_classEnergie`, `ann_classGES`, `tyb_id_bien`, `tyl_id_typelogement`, `ville_id`, `pay_id`, `reg_id`, `dep_id`, `ann_address`, `img_id_images`, `prf_id`, `ann_accessibiliteHandicap`, `ann_nbrdOccupant`, `ann_fillesUuniquement`, `ann_FumeursAutorises`, `ann_AnimauxAutorises`, `ann_GarçonsUniquement`, `ann_prix`, `ann_charge`, `ann_caution`, `ann_fraisAgence`) VALUES
-(1, 'titre', 'salutation', NULL, NULL, NULL, '2020-01-28 00:00:00.000000', 1, NULL, '1.000', 1, 2, 2, 'Oui', 'Non', 'B', 'B', 'Appartement', 'Location', 2, 5, 17, 16, '57466', 'Capture.PNG', NULL, 'Oui', 2, 'Oui', 'Oui', 'Oui', 'Oui', 11, 54, 45, NULL);
- 
+
 -- --------------------------------------------------------
 -- --------------------------------------------------------
 
@@ -291,7 +294,11 @@ CREATE TABLE `tyb_typebien` (
   `tyb_id_bien` INT AUTO_INCREMENT PRIMARY KEY,
   `description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
+INSERT INTO `tyb_typebien` (`tyb_id_bien`, `description`) VALUES
+(1, 'Location'),
+(2, 'Colocation'),
+(3, 'chambre chez habitant'),
+(4, 'atelier/loft');
 -- --------------------------------------------------------
 
 --
@@ -302,7 +309,10 @@ CREATE TABLE `tyl_typelogement` (
   `tyl_id_typeLogement` INT AUTO_INCREMENT PRIMARY KEY,
   `description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
+INSERT INTO `tyl_typelogement` (`tyl_id_typeLogement`, `description`) VALUES
+(1, 'maison'),
+(2, 'appartement'),
+(3, 'studio');
 -- --------------------------------------------------------
 
 --
