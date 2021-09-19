@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style_profile_particulier.css">
+    <link rel="stylesheet" href="/css/style_profile.css">
     <title>connecter</title>
 </head>
 <body >
@@ -14,23 +14,42 @@
     @csrf 
     <div class="profile">
         <ul class="particulier">
-            <li><div class="cercle"><a href=""><i class="fas fa-camera "></i></a></div></li>
             <li>
-                <ul class="donner_particulier">
-                    <li><p id="label"> Prénom: </p>            <p class="information">{{session('prenom')}}</p></li>
-                    <li><p id="label"> Nom:</p>                <p class="information">{{session('username')}}</li>
-                    <li><p id="label"> email:</p>               <p class="information">{{session('email')}}</li>
-                    <li><p id="label"> Date de naissance:</p>   <p class="information">{{session('dateN')}}</li>
-                    <li><p id="label"> Sexe:</p>               <p class="information">{{session('Sexe')}}</li>
-                    <li><p id="label"> Activité:</p>            <p class="information">{{session('activiter')}}</li>
-                    <li><p id="label"> Pays:</p>                <p class="information">{{session('pays')}}</li>
-                    <li><p id="label"> addresse:</p>            <p class="information">{{session('addresse')}}</li>
-                    <li><p id="label"> Téléphone (facultatif):</p> <p class="information">{{session('telephone')}}</li>
-                </ul>
+                <div class="cercle">
+                    <div class="image-preview" id="imagePreview">
+                        <img  src="" alt="Image Preview" class="image-preview__image">
+                        <input type="file" name="inpFile" id="inpFile">
+                    </div>
+                </div>
+                <button class="send_image">send</button>
+                <script src="/user_logo.js"></script>
+            </li>
+            <li>
+                <table class="donner_particulier">
+                    <tr>
+                        <td>Prénom:</td>
+                        <td>{{session('first_name')}}</td>
+                    </tr>
+                    <tr>
+                        <td>Nom:</td>
+                        <td>{{session('last_name')}}</td>
+                    </tr>
+                    <tr >
+                        <td>email:</td>
+                        <td name="email_user">{{session('prf_email')}}</td>
+                    </tr>
+                    <tr>
+                        <td> Téléphone (facultatif):</td>
+                        <td >{{session('telephone')}}</td>
+                    </tr>
+                </table>
             </li>
         </ul>
     </div>
-    <div class="formulaire_profile"></div>
+    <div class="favoris_contenu" >
+        <div class="favoris_titre"><h3>Favoris</h3></div>
+       
+    </div>
 </form>
 
 @endsection

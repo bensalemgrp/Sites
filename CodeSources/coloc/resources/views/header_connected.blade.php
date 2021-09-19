@@ -27,7 +27,7 @@
             </li>
             <li>
                 <ul class="header1-connect">
-                    <li><i class="fas fa-heart"></i></li>
+                    <li><a href="/favoris"><i class="fas fa-heart" style="color: black"></i></a></li>
                     <li><i class="fas fa-bell"></i></li>
                     <li>
                         <a >
@@ -52,7 +52,8 @@
             </div>
         </div>
        
-            <div id="profile"><a href="{{session('profile')}}" >Profile</a></div><br>
+            <div id="profile"><a href="profile_particulier" >Profile</a></div>
+            <div id="profile"><a href="favoris" >Favoris</a></div>
             <div id="deconnecter"><a href="/">Déconnecter</a></div>
         </div>
     </div></a>
