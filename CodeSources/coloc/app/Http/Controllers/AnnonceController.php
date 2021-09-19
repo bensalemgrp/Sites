@@ -17,6 +17,9 @@ class AnnonceController extends Controller
     public function index(Request $request){
 		$data['pay_pays']=DB::table('pay_pays')->orderBy('pay_id','asc')->get();
         $data['tya_annonce']=DB::table('tya_annonce')->orderBy('tya_id_annonce','asc')->get();
+        $data['tyl_typelogement']=DB::table('tyl_typelogement')->orderBy('tyl_id_typelogement','asc')->get();
+        $data['tyb_typebien']=DB::table('tyb_typebien')->orderBy('tyb_id_bien','asc')->get();
+        $data['ann_classGES']=DB::table('ann_annonce')->get();
 		return view('annonce',$data);
 	}
 
@@ -50,22 +53,6 @@ class AnnonceController extends Controller
 		}
 		echo $html;
 	}
-    // public function getTypeAnnonces(){
-    //     $tya_annonces=[
-    //         ['tya_id_annonce'=>1, 'description'=>'Offre'],
-    //         ['tya_id_annonce'=>2, 'description'=>'Demande']
-    //     ];
-    //     return view('annonce',['tya_annonce'=>$tya_annonces]);
-    // }
-
-
-//      public function deposer(){
-//          $pay_pays=[
-//
-//         ];
-//          return view('annonce',['pay_pays'=>$pay_pays]);
-
-//      }
 
 
     /**
@@ -77,6 +64,9 @@ class AnnonceController extends Controller
     {
         return view('annonce');
     }
+
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -95,6 +85,7 @@ class AnnonceController extends Controller
             'reg_id'=>'required',
             'dep_id'=>'required',
             'ville_id'=>'required',
+            'ann_fraisAgence'=>'required',
             'ann_address'=>'required',
             'ann_nbrdOccupant'=>'required',
             'ann_nombreChambre'=>'required',
@@ -102,6 +93,7 @@ class AnnonceController extends Controller
             'ann_caution'=>'required',
             'ann_nombrePiece'=>'required',
             'ann_surface'=>'required',
+            'ann_anneeConstruction'=>'required',
             'ann_meuble'=>'required',
             'ann_disponible'=>'required',
             'ann_classGES'=>'required',
@@ -118,16 +110,27 @@ class AnnonceController extends Controller
             'ann_classEnergie'=>'required',
             'img_id_images.*'=> 'mimes:png,jpeg,jpg'
         ]);
-        // if($request->hasfile('img_id_images')) {
-        //     foreach($request->file('img_id_images') as $file) {
-        //         $img_id_images = time() . '_' . $file->getClientOriginalName();
-        //         $file->storeAs('public/images', $img_id_images);
-        //         $data[] = $img_id_images;
-        //     }
-        // }
-        // $file= new Images();
-        // $file->images = json_encode($data);
-        // $file->save();
+        if($request->hasfile('img_id_images')) {
+            foreach($request->file('img_id_images') as $file) {
+                $img_CheminImage = $file->getClientOriginalName();
+                $file->storeAs('public/images', $img_CheminImage);
+                $data[] = $img_CheminImage;
+            }
+            $file= new Images();
+            $file->img_CheminImage= json_encode($data);
+            $file->save();
+
+
+        }
+
+
+
+        /*
+
+        - insert img in table image
+        -recuperate last id image inserted
+        -insert annonce table id recuperated for image table
+        */
 
          $query=DB::table('ann_annonce')->insert([
              'tya_id_annonce'=>$request->input('tya_id_annonce'),
@@ -138,6 +141,7 @@ class AnnonceController extends Controller
              'reg_id'=>$request->input('reg_id'),
              'dep_id'=>$request->input('dep_id'),
              'ville_id'=>$request->input('ville_id'),
+             'ann_anneeConstruction'=>$request->input('ann_anneeConstruction'),
              'ann_address'=>$request->input('ann_address'),
              'ann_nbrdOccupant'=>$request->input('ann_nbrdOccupant'),
              'ann_nombreChambre'=>$request->input('ann_nombreChambre'),
@@ -152,6 +156,7 @@ class AnnonceController extends Controller
              'ann_numEtage'=>$request->input('ann_numEtage'),
              'ann_description'=>$request->input('ann_description'),
              'img_id_images'=>$request->input('img_id_images'),
+
              'ann_FumeursAutorises'=>$request->input('ann_FumeursAutorises'),
              'ann_AnimauxAutorises'=>$request->input('ann_AnimauxAutorises'),
              'ann_GarçonsUniquement'=>$request->input('ann_GarçonsUniquement'),
@@ -159,6 +164,7 @@ class AnnonceController extends Controller
              'ann_ascenceur'=>$request->input('ann_ascenceur'),
              'ann_accessibiliteHandicap'=>$request->input('ann_accessibiliteHandicap'),
              'ann_classEnergie'=>$request->input('ann_classEnergie'),
+             'ann_fraisAgence'=>$request->input('ann_fraisAgence'),
 
          ]);
 
@@ -171,7 +177,6 @@ class AnnonceController extends Controller
         // return redirect('/connected');
 
     }
-
 
     /**
      * Display the specified resource.

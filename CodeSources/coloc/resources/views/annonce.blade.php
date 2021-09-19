@@ -12,15 +12,14 @@
     @extends('master_connected')
     @section('content')
 
-    <form action="annonce" method="post">
+    <form action="annonce" method="post" enctype="multipart/form-data">
        {{ csrf_field()}}
-
     <fieldset id="part-photo">
         <div class="block">
             <div class="preview"> <img src="/img/pic.png" id="pic-icon"> </div>
-            </div><br>
+        </div><br>
             <label for="file" class="label-file">Ajouter une image</label>
-            <input id="file" class="input-file" type="file"  accept="image/png, image/jpeg/*" onchange="previewFiles() " name="img_id_images" class=" @error('img_id_images') is-invalid @enderror" value="{{ old('img_id_images') }}" multiple>
+            <input id="file" class="input-file" type="file"  accept="image/png, image/jpeg/*" onchange="previewFiles() " name="img_id_images[]" class=" @error('img_id_images') is-invalid @enderror" value="{{ old('img_id_images') }}" multiple>
             @error('img_id_images')
             <div class="invalid-feed">
                <p>{{ $errors->first('img_id_images') }}</p>
@@ -41,16 +40,16 @@
            <p>{{ $errors->first('ann_titre') }}</p>
         </div>
         @enderror
+        <script src="/js/script.js"></script>
+
         <br><br>
 
         <label for="type_annonce">Type d'annonce : </label> &nbsp;&nbsp;
         <select id="type_annonce" name="tya_id_annonce" class=" @error('tya_id_annonce') is-invalid @enderror" value="{{ old('tya_id_annonce') }}">
             <option value="">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  --Sélectionner--</option>
-            {{-- <option>Offre</option>
-            <option>Demande</option> --}}
-            @foreach($tya_annonce as $list)
-            <option value="{{$list->tya_id_annonce}}">{{$list->description}}</option>
-        @endforeach
+                @foreach($tya_annonce as $list)
+                    <option value="{{$list->tya_id_annonce}}">{{$list->description}}</option>
+                @endforeach
         </select>
             @error('tya_id_annonce')
             <div class="invalid-feed">
@@ -62,10 +61,9 @@
         <label for="type_logement">Type du logement: </label> &nbsp;&nbsp;
         <select id="type_logement" name="tyl_id_typelogement" class=" @error('tyl_id_typelogement') is-invalid @enderror" value="{{ old('tyl_id_typelogement') }}">
             <option value="">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --Sélectionner--</option>
-            <option>Location</option>
-            <option>Colocation</option>
-            <option>Sous-Location</option>
-            <option>Chambre chez habitant</option>
+            @foreach($tyl_typelogement as $list)
+            <option value="{{$list->tyl_id_typeLogement}}">{{$list->description}}</option>
+        @endforeach
         </select>
         @error('tyl_id_typelogement')
         <div class="invalid-feed">
@@ -77,10 +75,9 @@
         <label for="type-bien">Type de bien: </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <select id="type-bien" name="tyb_id_bien" class=" @error('tyb_id_bien') is-invalid @enderror"  value="{{ old('tyb_id_bien') }}">
             <option value="">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --Sélectionner--</option>
-            <option>Appartement</option>
-            <option>Maison</option>
-            <option>Studio</option>
-            <option>Loft/Atelier</option>
+            @foreach($tyb_typebien as $list)
+            <option value="{{$list->tyb_id_bien}}">{{$list->description}}</option>
+        @endforeach
         </select>
         @error('tyb_id_bien')
         <div class="invalid-feed">
@@ -279,6 +276,15 @@
         @enderror
         <br><br>
 
+        <label for="construction"> Année de Construction :</label>
+        <input type="number" id="construction" name="ann_anneeConstruction" class=" @error('ann_anneeConstruction') is-invalid @enderror" value="{{ old('ann_anneeConstruction') }}">
+        @error('ann_anneeConstruction')
+        <div class="invalid-feed">
+           <p>{{ $errors->first('ann_anneeConstruction') }}</p>
+        </div>
+        @enderror
+        <br><br>
+
     </fieldset>
 
     <fieldset>
@@ -312,6 +318,15 @@
         @enderror
         <br><br>
 
+        <label for="frais">Frais Agence : </label>&nbsp;
+        <input id="frais" type="number" name="ann_fraisAgence" class=" @error('ann_fraisAgence') is-invalid @enderror" value="{{ old('ann_fraisAgence') }}">
+        @error('ann_fraisAgence')
+        <div class="invalid-feed">
+           <p>{{ $errors->first('ann_fraisAgence') }}</p>
+        </div>
+        @enderror
+        <br><br>
+
     </fieldset>
 
     <fieldset>
@@ -321,6 +336,7 @@
 
         <label for="GES">GES : </label>&nbsp;
         <select id="GES" name="ann_classGES" class=" @error('ann_classGES') is-invalid @enderror" value="{{ old('ann_classGES') }}">
+            <option value="">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  --Sélèctionner-- </option>
             <option value="">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  --Sélèctionner-- </option>
             <option>A</option>
             <option>B</option>
@@ -455,6 +471,7 @@
     </fieldset>
 
 </form>
+
 @endsection
 </body>
 </html>
